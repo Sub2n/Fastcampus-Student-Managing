@@ -1,6 +1,4 @@
 .homework {
-  width: 100%;
-  display: flex;
-  align-items: stretch;
-  flex-direction: row;
+  position: relative;
+  width: 87vw;
 }

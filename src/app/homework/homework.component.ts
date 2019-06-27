@@ -11,8 +11,8 @@ export class HomeworkComponent implements OnInit {
   constructor(private studentsService: StudentsService) {}
 
   ngOnInit() {}
-  showSidebar() {
-    this.showSide = !this.showSide;
-    this.studentsService.setShowSide(this.showSide);
+
+  showSidebar(state: boolean) {
+    this.showSide = state;
   }
 }
