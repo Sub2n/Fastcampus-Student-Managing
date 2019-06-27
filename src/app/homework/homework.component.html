@@ -1,5 +1,6 @@
 <section class="homework">
   과제페이지
+  <button (click)="showSidebar()"></button>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. In metus augue, sollicitudin eu mi vel, fermentum feugiat
     magna. Nam sed odio ultrices, molestie ipsum eget, bibendum lacus. Pellentesque habitant morbi tristique senectus et
@@ -36,4 +37,5 @@
     sagittis justo eleifend purus fermentum suscipit. Nulla a consequat ligula, sit amet ullamcorper mauris. Fusce sed
     arcu venenatis, feugiat mi sed, ornare nisl. Sed vel purus eget nisi malesuada ullamcorper non nec neque.
   </p>
+  <app-homework-side [isShow]="showSide"></app-homework-side>
 </section>

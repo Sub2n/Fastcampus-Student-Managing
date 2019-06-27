@@ -10,6 +10,7 @@ import { ManageComponent } from './manage/manage.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { HomeworkComponent } from './homework/homework.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
+import { HomeworkSideComponent } from './homework-side/homework-side.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { SideNavComponent } from './side-nav/side-nav.component';
     AttendanceComponent,
     HomeworkComponent,
     SideNavComponent,
+    HomeworkSideComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
