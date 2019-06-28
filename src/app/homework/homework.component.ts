@@ -8,11 +8,13 @@ import { StudentsService } from '../services/students.service';
 })
 export class HomeworkComponent implements OnInit {
   showSide = false;
+  showInput = false;
   constructor() {}
 
   ngOnInit() {}
 
-  showSidebar(state: boolean) {
-    this.showSide = state;
+  showSidebar(state: any) {
+    this.showSide = state[0];
+    this.showInput = state[1];
   }
 }

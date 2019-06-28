@@ -10,41 +10,49 @@
   /* f2f2f2 */
 }
 
-.material-icons{
+.material-icons {
   color: #b71c1c;
   font-size: 2.4rem;
- 
+
 }
-.person, .tr-head{
+
+.person,
+.tr-head {
   text-align: center;
   vertical-align: middle;
   /* background-color: aqua; */
   padding-top: 10px;
-  
+
 }
-.name, .person{
+
+.name,
+.person {
   padding: 10px;
   font-size: 1.2rem;
 }
-.header-month, .calender-table-div{
+
+.header-month,
+.calender-table-div {
   margin: 50px auto;
   vertical-align: middle;
   display: flex;
   justify-content: space-around;
 }
-.arrow, .month{
+
+.arrow,
+.month {
   display: inline-block;
   font-size: 4.5rem;
 
 }
 
-.calender-table{
+.calender-table {
   display: inline-block;
   padding: 20px 20px 10px 10px;
-  
+
 }
 
-.day{
+.day {
   background-color: #b71c1c;
   border-radius: 20%;
   color: #ffffff;
@@ -54,7 +62,8 @@
   font-size: 1.2rem;
   margin-right: 5px;
 }
-.calender-table-div{
+
+.calender-table-div {
   background-color: #f2f2f2;
   border-radius: 40px 40px 0 0;
   width: auto;

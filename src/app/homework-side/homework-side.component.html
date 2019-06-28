@@ -1,8 +1,17 @@
 <section class="side-bar" [class.show]="isShow">
-  <h1 class="student">
-    한현진 학생
-  </h1>
-  <ul class="homework">
+  <form *ngIf="showInput; else homework" [formGroup]="homeworkForm" (ngSubmit)="onSubmit(homeworkForm.value)">
+    <fieldset>
+      <legend class="readable-hidden">과제 추가</legend>
+      <div class="homework-wrap">
+        <label for="homework">아이디</label>
+        <input type="text" name="homework" id="homework" required placeholder="과제를 입력하세요." formControlName="homework">
+      </div>
+      <button type="submit" class="btn-login" [disabled]="!homeworkForm.valid">추가</button>
+    </fieldset>
+  </form>
+  <ng-template #homework>
+    <ul class="homework">
 
-  </ul>
+    </ul>
+  </ng-template>
 </section>
