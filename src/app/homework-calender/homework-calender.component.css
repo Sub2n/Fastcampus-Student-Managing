@@ -42,6 +42,7 @@
 .month {
   display: inline-block;
   font-size: 4.5rem;
+  cursor: grab;
 
 }
 
@@ -60,9 +61,10 @@
   color: #ffffff;
   width: 1.5vw;
   height: 1.5vw;
-  /* padding: 10px; */
+  line-height: 1.5vw;
   font-size: 1rem;
   margin-right: 0.6vw;
+  margin-bottom: 0.5vw;
   vertical-align: middle;
   cursor: grab;
 }

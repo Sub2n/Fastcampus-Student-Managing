@@ -3,10 +3,10 @@
 } */
 :host {
   display: inline-block;
-  width: 76vw;
+  width: 87vw;
   height: 100vh;
   margin: 0 2vw;
-  background: cadetblue;
+  /* background: cadetblue; */
  }
 
 .input_check {
@@ -21,39 +21,60 @@
   vertical-align: middle;
   padding-top: 10px;
  }
- .tr-head td, .person{
-  padding: 10px;
-  font-size: 1.2rem;
- }
 
- .header-month{
-  margin: 50px;
+ .name,
+.person {
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.header-month,
+.calender-table {
+  margin: 50px auto;
   vertical-align: middle;
   display: flex;
-  justify-content: space-between;
- }
+  justify-content: space-around;
+}
 
- .arrow, .month{
+.arrow,
+.month {
   display: inline-block;
   font-size: 4.5rem;
- }
+  cursor: grab;
+
+}
  
  .attendance-table{
+  display: inline-block;
+  padding: 16px 10px 10px 10px;
   background-color: #f2f2f2;
+  border-radius: 40px 40px 0 0;
+  margin: 0 0.5vw;
+  width: 82vw;
+  min-height: 39vw;
  }
  
  .day{
   background-color: #b71c1c;
   border-radius: 20%;
   color: #ffffff;
+  width: 1.7vw;
+  height: 1.7vw;
+  font-size: 1rem;
+  line-height: 1.7vw;
+  margin: auto;
+  cursor: grab;
  }
  
- select { 
-   -webkit-appearance: none; /* 네이티브 외형 감추기 */ 
-   -moz-appearance: none; 
-   appearance: none; 
-   padding: 5px;
-   border-radius: 20%;
-   text-align: center;
+select { 
+  -webkit-appearance: none; /* 네이티브 외형 감추기 */ 
+  -moz-appearance: none; 
+  appearance: none; 
+  padding: 5px;
+  border-radius: 20%;
+  text-align: center;
+  margin : 0.05vw 0.1vw;
 }
+
+
 /* 힘내자 */

@@ -21,7 +21,7 @@ export class HomeworkSideComponent implements OnInit {
   public apiUrl = environment.apiUrl;
   public homeworkForm: FormGroup;
 
-  constructor(private http: HttpClient, private formBuilder: FormBuilder) {}
+  constructor(private http: HttpClient, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.homeworkForm = this.formBuilder.group({

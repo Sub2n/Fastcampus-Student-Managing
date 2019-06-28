@@ -20,7 +20,7 @@ export class HomeworkCalenderComponent implements OnInit {
   studentsData: Student[];
   touchHomework: boolean;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.http
@@ -35,7 +35,7 @@ export class HomeworkCalenderComponent implements OnInit {
     this.touchHomework = false;
   }
 
-  showSide() {}
+  showSide() { }
 
   increase() {
     if (this.presentMonth === 11) {
