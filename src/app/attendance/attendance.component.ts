@@ -15,7 +15,7 @@ export class AttendanceComponent implements OnInit {
   studentsData: Student[];
   thisDate: string;
   attend = [
-    { value: 4, attend: "선택" },
+    { value: 4, attend: "-" },
     { value: 0, attend: "출석" },
     { value: 1, attend: "지각" },
     { value: 2, attend: "결석" }
