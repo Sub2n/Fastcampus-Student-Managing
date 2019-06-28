@@ -1,12 +1,5 @@
 import { Injectable } from '@angular/core';
-
-interface Manager {
-  id: number;
-  name: string;
-  class: string;
-  email: string;
-  password: string;
-}
+import { Manager } from '../models/manager';
 
 @Injectable({
   providedIn: 'root',

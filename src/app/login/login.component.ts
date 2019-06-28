@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  FormControl,
-  Validators,
-} from '@angular/forms';
-import { LoginService } from '../login.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,29 +9,53 @@ import { LoginService } from '../login.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  public loginForm = new FormGroup({
-    id: new FormControl('', [Validators.required, Validators.email]),
-    pw: new FormControl('', [Validators.required, Validators.minLength(8)]),
-  });
+  public loginForm: FormGroup;
+  public message: string;
 
   constructor(
-    private loginService: LoginService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private auth: AuthService,
+    private router: Router
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.loginForm = this.formBuilder.group({
+      id: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(
+            /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/
+          ),
+        ],
+      ],
+      pw: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(/[a-zA-Z0-9]/),
+          Validators.minLength(4),
+          Validators.maxLength(10),
+        ],
+      ],
+    });
+  }
 
   onSubmit(value: any) {
-    // 유효성 검사
-    const idTest = /[a-z0-9]{2,}@[a-z0-9-]{2,}\.[a-z0-9]{2,}/i;
-    const pwTest = /^[A-Za-z0-9]{6,12}$/;
-    if (!idTest.test(value.id)) {
-      alert('올바른 e-mail 주소를 입력하세요.');
-      return;
-    }
-    if (!pwTest.test(value.pw)) {
-      alert('숫자, 문자가 섞인 6 ~ 12자리 비밀번호를 입력하세요.');
-    }
-    this.loginService.setLoginStatus(true);
+    console.log('[payload]', this.loginForm.value);
+    this.auth.signin(this.loginForm.value).subscribe(
+      () => this.router.navigate(['dashboard']),
+      ({ error }) => {
+        console.log(error.message);
+        this.message = error.message;
+      }
+    );
+  }
+  get id() {
+    return this.loginForm.get('id');
+  }
+
+  get pw() {
+    return this.loginForm.get('pw');
   }
 }

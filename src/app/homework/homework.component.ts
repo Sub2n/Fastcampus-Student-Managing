@@ -8,7 +8,7 @@ import { StudentsService } from '../students.service';
 })
 export class HomeworkComponent implements OnInit {
   showSide = false;
-  constructor(private studentsService: StudentsService) {}
+  constructor() {}
 
   ngOnInit() {}
 
