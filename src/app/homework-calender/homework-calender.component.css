@@ -51,6 +51,7 @@
   background-color: #f2f2f2;
   border-radius: 40px 40px 0 0;
   margin: 0 0.5vw;
+  width: 70vw;
 }
 
 .day {
@@ -61,7 +62,7 @@
   height: 1.5vw;
   /* padding: 10px; */
   font-size: 1rem;
-  margin-right: 5px;
+  margin-right: 0.6vw;
   vertical-align: middle;
   cursor: grab;
 }
