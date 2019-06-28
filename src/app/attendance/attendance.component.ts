@@ -46,7 +46,7 @@ export class AttendanceComponent implements OnInit {
       this.maxDays = [...this.maxDays, b.getDate()]
     }
     for (let i = 1; i <= this.maxDays[this.presentMonth]; i++) {
-      this.days = [...this.days, { year: this.presentYear, month: this.presentMonth + 1, day: i }];
+      this.days = [...this.days, { year: this.presentYear, month: this.presentMonth + 1, day: i, all: `${this.presentYear}${this.presentMonth + 1}${i}` }];
     }
   }
 

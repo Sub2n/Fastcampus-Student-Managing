@@ -16,14 +16,13 @@
       </tr>
       <tr *ngFor="let person of studentsData">
         <td class="person {{person.id}}">{{person.name}}</td>
-        <button *ngFor="let item of [person.attendance]" (click)="load(item)">sss</button>
         <td *ngFor="let day of days">
           <select name="wow" id="wow" (change)="select($event.target, person, day)">
-            <option [value]="att.value" *ngFor="let att of attend">{{att.attend}}</option>
+            <option [value]="att.value" *ngFor="let att of attend" [selected]="att.value === +person.attendance[day.all]">{{att.attend}}</option>
           </select>
         </td>
       </tr>
     </table>
   </section>
-  <!-- <pre>{{ studentsData | json }}</pre> -->
+  <pre>{{ studentsData | json }}</pre>
   
