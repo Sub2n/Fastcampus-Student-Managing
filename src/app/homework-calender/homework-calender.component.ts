@@ -8,14 +8,50 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class HomeworkCalenderComponent implements OnInit {
   isShow: boolean;
   @Output() show = new EventEmitter();
-
   maxDays = [];
   days = [];
+  presentMonth: number
+  presentYear: number
+
+  constructor() {
+
+  }
+
+  ngOnInit() {
+    this.presentMonth = new Date().getMonth();
+    this.presentYear = new Date().getFullYear();
+    this.makeDay();
+
+    this.isShow = false;
+
+  }
+
 
   showSide() {
     this.isShow = !this.isShow;
     this.show.emit(this.isShow);
   }
+
+  increase() {
+    if (this.presentMonth === 11) {
+      this.presentYear++;
+      this.presentMonth = 0;
+    }
+    else this.presentMonth++;
+    this.makeDay();
+  }
+
+  decrease() {
+    if (this.presentMonth === 0) {
+      this.presentYear--;
+      this.presentMonth = 11;
+      return;
+    }
+    this.presentMonth--;
+    this.makeDay();
+  }
+
+
 
   persons = [
     { id: 1, name: "최성진" },
@@ -39,21 +75,17 @@ export class HomeworkCalenderComponent implements OnInit {
     { id: 19, name: "서문탁" },
     { id: 20, name: "이샤론" }
   ]
-  constructor() {
-    this.makeDay();
-  }
 
-  ngOnInit() {
-    this.isShow = false;
-  }
+
 
   makeDay() {
+    this.days = [];
     for (let a = 1; a < 13; a++) {
-      const b = new Date(2019, a, 0)
+      const b = new Date(this.presentYear, a, 0)
       this.maxDays = [...this.maxDays, b.getDate()]
     }
-    for (let i = 1; i <= this.maxDays[5]; i++) {
-      this.days = [...this.days, { year: 2019, month: 6, day: i }];
+    for (let i = 1; i <= this.maxDays[this.presentMonth]; i++) {
+      this.days = [...this.days, { year: this.presentYear, month: this.presentMonth + 1, day: i }];
     }
   }
 

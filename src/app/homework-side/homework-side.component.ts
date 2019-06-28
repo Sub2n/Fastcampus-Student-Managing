@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { StudentsService } from '../students.service';
+import { StudentsService } from '../services/students.service';
 
 @Component({
   selector: 'app-homework-side',

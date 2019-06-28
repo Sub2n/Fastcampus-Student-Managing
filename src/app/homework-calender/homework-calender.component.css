@@ -14,3 +14,20 @@
   font-size: 2.4rem;
 
 }
+.person, .tr-head{
+  text-align: center;
+  vertical-align: middle;
+  /* background-color: aqua; */
+}
+
+.header-month{
+  margin: 50px;
+  vertical-align: middle;
+  display: flex;
+  justify-content: space-between;
+}
+.arrow, .month{
+  display: inline-block;
+  font-size: 4.5rem;
+
+}

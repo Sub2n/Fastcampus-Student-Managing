@@ -14,7 +14,7 @@
         </div>
         <div class="user-pw">
           <label for="user-pw">비밀번호</label>
-          <input type="password" name="upw" id="user-pw" required placeholder="숫자, 문자 포함 6~12자리" formControlName="pw">
+          <input type="password" name="upw" id="user-pw" required placeholder="숫자, 문자 포함 6~20자리" formControlName="pw">
         </div>
         <button type="submit" class="btn-login" [disabled]="!loginForm.valid">로그인</button>
       </fieldset>
