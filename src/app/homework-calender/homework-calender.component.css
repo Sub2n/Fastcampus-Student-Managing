@@ -30,7 +30,8 @@
   font-size: 1rem;
 }
 
-.header-month, .calender-table{
+.header-month,
+.calender-table {
   margin: 50px auto;
   vertical-align: middle;
   display: flex;
@@ -56,15 +57,15 @@
   background-color: #b71c1c;
   border-radius: 20%;
   color: #ffffff;
-  width: 15px;
-  height: 15px;
-  padding: 10px;
+  width: 1.5vw;
+  height: 1.5vw;
+  /* padding: 10px; */
   font-size: 1rem;
   margin-right: 5px;
+  vertical-align: middle;
   cursor: grab;
 }
 
-.icon{
+.icon {
   cursor: grab;
 }
-
