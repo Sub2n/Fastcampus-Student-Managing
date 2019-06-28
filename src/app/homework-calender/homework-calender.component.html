@@ -20,7 +20,7 @@
     </tr>
     <tr *ngFor="let person of studentsData">
       <td class="person {{person.id}}">{{person.name}}</td>
-      <td *ngFor="let day of days" class=" {{day.year}}-{{day.month}}-{{day.day}}-{{person.id}}">
+      <td *ngFor="let day of days">
         <!-- <input type="checkbox" class="{{day.year}}-{{day.month}}-{{day.day}}-{{person.id}}"> -->
         <ng-container *ngIf="false">
           <i class="material-icons icon circle">

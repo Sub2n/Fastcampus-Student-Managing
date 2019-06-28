@@ -12,7 +12,7 @@ export class HomeworkSideComponent implements OnInit {
   @Input() showInput: boolean;
   public homeworkForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.homeworkForm = this.formBuilder.group({
@@ -20,7 +20,7 @@ export class HomeworkSideComponent implements OnInit {
     });
   }
 
-  onSubmit(value: any) {}
+  onSubmit(value: any) { }
 
   // getShowSide() {
   //   this.studentsService
