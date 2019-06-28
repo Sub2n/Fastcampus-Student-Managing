@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class LoginService {
   isLogin: boolean;
+  userName: string;
   classId: number;
   apiUrl = environment.apiUrl;
   managers: Manager[];
@@ -33,6 +34,9 @@ export class LoginService {
     if (manager) {
       this.isLogin = true;
       this.classId = manager.classId;
+      this.userName = manager.name;
+      localStorage.setItem('classId', JSON.stringify(this.classId));
+      localStorage.setItem('userName', JSON.stringify(this.userName));
     } else this.isLogin = false;
 
     console.log(this.isLogin);
