@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Student } from '../models/students.interface';
+import { Day } from '../models/day';
 
 @Component({
   selector: 'app-homework-calender',
@@ -9,7 +10,9 @@ import { Student } from '../models/students.interface';
 })
 export class HomeworkCalenderComponent implements OnInit {
   isShow: boolean;
-  @Output() show = new EventEmitter();
+  @Output() showInput = new EventEmitter();
+  @Output() showHome = new EventEmitter();
+
   maxDays = [];
   days = [];
   presentMonth: number;
@@ -59,14 +62,29 @@ export class HomeworkCalenderComponent implements OnInit {
       this.maxDays = [...this.maxDays, b.getDate()];
     }
     for (let i = 1; i <= this.maxDays[this.presentMonth]; i++) {
-      this.days = [...this.days, { year: this.presentYear, month: this.presentMonth + 1, day: i, all: `${this.presentYear}${this.presentMonth + 1}${i}` }];
-      console.log(this.days);
+      this.days = [
+        ...this.days,
+        {
+          year: this.presentYear,
+          month: this.presentMonth + 1,
+          day: i,
+          all: `${this.presentYear}${this.presentMonth + 1}${i}`,
+        },
+      ];
     }
   }
 
-  addHomework() {
+  addHomework(day: Day) {
     this.isShow = !this.isShow;
-    this.touchHomework = !this.touchHomework;
-    this.show.emit([this.isShow, this.touchHomework]);
+    this.touchHomework = true;
+    this.showInput.emit([this.isShow, this.touchHomework, day]);
+  }
+
+  showHomework(student: Student, day: Day) {
+    console.log(student, day);
+
+    this.isShow = !this.isShow;
+    this.touchHomework = false;
+    this.showHome.emit([this.isShow, this.touchHomework, day, student]);
   }
 }

@@ -1,4 +1,4 @@
 <section class="homework">
-  <app-homework-calender (show)="showSidebar($event)"></app-homework-calender>
-  <app-homework-side [isShow]="showSide" [showInput]="showInput"></app-homework-side>
+  <app-homework-calender (showInput)="showSidebar($event)" (showHome)="showSidebar($event)"></app-homework-calender>
+  <app-homework-side [isShow]="showSide" [showInput]="showInput" [day]="day" [student]="student"></app-homework-side>
 </section>
