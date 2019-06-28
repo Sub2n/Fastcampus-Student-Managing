@@ -21,7 +21,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  margin: 20px 20px;
+  margin: 20px 0 10px 20px;
 }
 
 .profile div {
@@ -46,10 +46,12 @@ span {
 }
 
 .border {
+  position: absolute;
+  top: 150px;
   display: block;
   width: 100%;
-  height: 2px;
-  background: #9c9c9c;
+  height: 1px;
+  background: #e4dbd896;
 }
 
 nav {
@@ -67,7 +69,7 @@ ul.nav {
 }
 
 .nav li:hover {
-  background: #9c9c9c6c;
+  background: #e4dbd86b;
   padding-left: 20px;
 }
 
