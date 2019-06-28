@@ -35,6 +35,7 @@
 .arrow, .month{
   display: inline-block;
   font-size: 4.5rem;
+  cursor: grab;
 
 }
 
