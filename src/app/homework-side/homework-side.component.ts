@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { StudentsService } from '../services/students.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-homework-side',
@@ -8,11 +9,18 @@ import { StudentsService } from '../services/students.service';
 })
 export class HomeworkSideComponent implements OnInit {
   @Input() isShow: boolean;
-  constructor(private studentsService: StudentsService) {}
+  @Input() showInput: boolean;
+  public homeworkForm: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
-    // this.getShowSide();
+    this.homeworkForm = this.formBuilder.group({
+      homework: ['', [Validators.required, Validators.maxLength(20)]],
+    });
   }
+
+  onSubmit(value: any) {}
 
   // getShowSide() {
   //   this.studentsService

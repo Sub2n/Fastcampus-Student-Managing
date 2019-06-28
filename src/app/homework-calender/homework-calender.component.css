@@ -5,29 +5,67 @@
   left: 0;
   width: 70vw;
   height: 100vh;
-  margin: 0 2vw;
-  background: pink;
+  margin: 0vw;
+  /* background: pink; */
+  /* f2f2f2 */
 }
 
-.material-icons{
+.material-icons {
   color: #b71c1c;
-  font-size: 2.4rem;
-
+  font-size: 2.2rem;
 }
-.person, .tr-head{
+
+.person,
+.tr-head {
   text-align: center;
   vertical-align: middle;
   /* background-color: aqua; */
+  padding-top: 10px;
+
 }
 
-.header-month{
-  margin: 50px;
+.name,
+.person {
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.header-month,
+.calender-table {
+  margin: 50px auto;
   vertical-align: middle;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
-.arrow, .month{
+
+.arrow,
+.month {
   display: inline-block;
   font-size: 4.5rem;
 
+}
+
+.calender-table {
+  display: inline-block;
+  padding: 20px 20px 10px 10px;
+  background-color: #f2f2f2;
+  border-radius: 40px 40px 0 0;
+  margin: 0 0.5vw;
+}
+
+.day {
+  background-color: #b71c1c;
+  border-radius: 20%;
+  color: #ffffff;
+  width: 1.5vw;
+  height: 1.5vw;
+  /* padding: 10px; */
+  font-size: 1rem;
+  margin-right: 5px;
+  vertical-align: middle;
+  cursor: grab;
+}
+
+.icon {
+  cursor: grab;
 }

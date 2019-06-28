@@ -1,7 +1,7 @@
 export interface Manager {
   id: number;
   name: string;
-  class: string;
+  classId: number;
   email: string;
   password: string;
 }

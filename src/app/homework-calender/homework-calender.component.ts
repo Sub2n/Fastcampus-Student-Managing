@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Student } from '../models/students.interface';
 
 @Component({
   selector: 'app-homework-calender',
@@ -10,34 +12,33 @@ export class HomeworkCalenderComponent implements OnInit {
   @Output() show = new EventEmitter();
   maxDays = [];
   days = [];
-  presentMonth: number
-  presentYear: number
+  presentMonth: number;
+  presentYear: number;
+  studentsData: Student[];
+  touchHomework: boolean;
 
-  constructor() {
-
-  }
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
+    this.http
+      .get<Student[]>('http://localhost:3000/students')
+      .subscribe(data => (this.studentsData = data));
+
     this.presentMonth = new Date().getMonth();
     this.presentYear = new Date().getFullYear();
     this.makeDay();
 
     this.isShow = false;
-
+    this.touchHomework = false;
   }
 
-
-  showSide() {
-    this.isShow = !this.isShow;
-    this.show.emit(this.isShow);
-  }
+  showSide() {}
 
   increase() {
     if (this.presentMonth === 11) {
       this.presentYear++;
       this.presentMonth = 0;
-    }
-    else this.presentMonth++;
+    } else this.presentMonth++;
     this.makeDay();
   }
 
@@ -51,46 +52,23 @@ export class HomeworkCalenderComponent implements OnInit {
     this.makeDay();
   }
 
-
-
-  persons = [
-    { id: 1, name: "최성진" },
-    { id: 2, name: "한현진" },
-    { id: 3, name: "박수빈" },
-    { id: 4, name: "김둘리" },
-    { id: 5, name: "신짱구" },
-    { id: 6, name: "김자두" },
-    { id: 7, name: "이기영" },
-    { id: 8, name: "이규하" },
-    { id: 9, name: "허범성" },
-    { id: 10, name: "이수영" },
-    { id: 11, name: "조항민" },
-    { id: 12, name: "최코난" },
-    { id: 13, name: "김퉁퉁" },
-    { id: 14, name: "김스폰지밥" },
-    { id: 15, name: "한루피" },
-    { id: 16, name: "유깐깐찡어" },
-    { id: 17, name: "김초파" },
-    { id: 18, name: "박나미" },
-    { id: 19, name: "서문탁" },
-    { id: 20, name: "이샤론" }
-  ]
-
-
-
   makeDay() {
     this.days = [];
     for (let a = 1; a < 13; a++) {
-      const b = new Date(this.presentYear, a, 0)
-      this.maxDays = [...this.maxDays, b.getDate()]
+      const b = new Date(this.presentYear, a, 0);
+      this.maxDays = [...this.maxDays, b.getDate()];
     }
     for (let i = 1; i <= this.maxDays[this.presentMonth]; i++) {
-      this.days = [...this.days, { year: this.presentYear, month: this.presentMonth + 1, day: i }];
+      this.days = [
+        ...this.days,
+        { year: this.presentYear, month: this.presentMonth + 1, day: i },
+      ];
     }
   }
 
-
-
-
-
+  addHomework() {
+    this.isShow = !this.isShow;
+    this.touchHomework = !this.touchHomework;
+    this.show.emit([this.isShow, this.touchHomework]);
+  }
 }
