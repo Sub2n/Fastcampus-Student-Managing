@@ -1,4 +1,14 @@
 <section class="attendance">
-  출석 페이지
-  <div>안녕하세요</div>
+  <table>
+    <tr>
+      <td>이름</td>
+      <td *ngFor="let day of days">{{day.day}}</td>
+    </tr>
+    <tr *ngFor="let person of persons">
+      <td>{{person.name}}</td>
+      <td *ngFor="let day of days" >
+        <input type="checkbox" class="{{day.year}}-{{day.month}}-{{day.day}}-{{person.id}}">
+      </td>
+    </tr>
+  </table>
 </section>
