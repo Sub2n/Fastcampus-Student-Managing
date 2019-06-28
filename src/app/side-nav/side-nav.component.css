@@ -1,0 +1,86 @@
+.side-bar {
+  position: relative;
+  background: #b71c1c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 13vw;
+  min-width: 200px;
+  height: 100vh;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.profile {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 20px 0 10px 20px;
+}
+
+.profile div {
+  vertical-align: middle;
+  margin: 0 20px;
+}
+
+span {
+  color: #fff;
+}
+
+.name {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin: 10px 0;
+}
+
+.class {
+  color: #ffdda9;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.border {
+  position: absolute;
+  top: 150px;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #e4dbd896;
+}
+
+nav {
+  width: 100%;
+  margin-top: 200px;
+}
+
+ul.nav {
+  font-size: 1.5rem;
+}
+
+.nav li {
+  padding-left: 20px;
+  height: 50px;
+}
+
+.nav li:hover {
+  background: #e4dbd86b;
+  padding-left: 20px;
+}
+
+.nav a {
+  display: inline-block;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+.material-icons {
+  vertical-align: middle;
+}

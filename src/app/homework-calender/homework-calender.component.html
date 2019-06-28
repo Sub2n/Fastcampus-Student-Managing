@@ -1,0 +1,41 @@
+<section class="calender">
+  <!-- <button (click)="showSide()">오른쪽 사이드바 toggle</button> -->
+  <div class="header-month">
+    <i class="arrow material-icons" (click)="decrease()">
+      keyboard_arrow_left
+    </i>
+    <h1 class="month">{{presentYear}} . {{presentMonth + 1}}</h1>
+    <i class="arrow material-icons" (click)="increase()">
+      keyboard_arrow_right
+    </i>
+  </div>
+  <table class="calender-table">
+    <tr class="tr-head">
+      <td>이름</td>
+      <td *ngFor="let day of days" class="day">{{day.day}}</td>
+    </tr>
+    <tr *ngFor="let person of persons">
+      <td class="person {{person.id}}">{{person.name}}</td>
+      <td *ngFor="let day of days" class="icon {{day.year}}-{{day.month}}-{{day.day}}-{{person.id}}">
+        <!-- <input type="checkbox" class="{{day.year}}-{{day.month}}-{{day.day}}-{{person.id}}"> -->
+        <ng-container *ngIf="false">
+          <i class="material-icons circle">
+            fiber_manual_record
+          </i>
+        </ng-container>
+        <ng-container *ngIf="true">
+          <i class="material-icons triangle">
+            change_history
+          </i>
+        </ng-container>
+        <ng-container *ngIf="false">
+          <i class="material-icons close">
+            close
+          </i>
+        </ng-container>
+
+
+      </td>
+    </tr>
+  </table>
+</section>
