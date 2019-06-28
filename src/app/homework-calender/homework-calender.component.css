@@ -5,7 +5,7 @@
   left: 0;
   width: 78vw;
   height: 100vh;
-  margin: 0 2vw;
+  margin: 0vw;
   /* background: pink; */
   /* f2f2f2 */
 }
@@ -22,15 +22,15 @@
   padding-top: 10px;
   
 }
-.tr-head td, .person{
+.name, .person{
   padding: 10px;
   font-size: 1.2rem;
 }
-.header-month, .calender-table{
-  margin: 50px;
+.header-month, .calender-table-div{
+  margin: 50px auto;
   vertical-align: middle;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .arrow, .month{
   display: inline-block;
@@ -39,19 +39,24 @@
 }
 
 .calender-table{
-  background-color: #f2f2f2;
   display: inline-block;
   padding: 20px 20px 10px 10px;
-  border-radius: 40px 40px 0 0;
+  
 }
 
 .day{
   background-color: #b71c1c;
   border-radius: 20%;
   color: #ffffff;
+  width: 18px;
+  height: 18px;
+  padding: 10px;
+  font-size: 1.2rem;
+  margin-right: 5px;
 }
-
-.day, .icon{
-  display: table-cell;
-  /* margin-right: 10px; */
+.calender-table-div{
+  background-color: #f2f2f2;
+  border-radius: 40px 40px 0 0;
+  width: auto;
+  margin: 0 20px;
 }
