@@ -6,7 +6,7 @@
         <label for="homework">과제 입력</label>
         <input type="text" name="homework" id="homework" required placeholder="과제를 입력하세요." formControlName="homework">
       </div>
-      <button type="submit" class="btn-login" [disabled]="!homeworkForm.valid">추가</button>
+      <button type="submit" class="btn-submit" [disabled]="!homeworkForm.valid">추가</button>
     </fieldset>
   </form>
   <ng-template #homework>

@@ -13,7 +13,7 @@
     <tr class="tr-head">
       <td class="name">이름</td>
       <td *ngFor="let day of days">
-        <div class="day" (click)="addHomework()">
+        <div class="day" (click)="addHomework(day)">
           {{day.day}}
         </div>
       </td>
@@ -23,17 +23,17 @@
       <td *ngFor="let day of days" class=" {{day.year}}-{{day.month}}-{{day.day}}-{{person.id}}">
         <!-- <input type="checkbox" class="{{day.year}}-{{day.month}}-{{day.day}}-{{person.id}}"> -->
         <ng-container *ngIf="false">
-          <i class="material-icons icon circle">
+          <i class="material-icons icon circle" (click)="showHomework(person, day)">
             fiber_manual_record
           </i>
         </ng-container>
         <ng-container *ngIf="true">
-          <i class="material-icons icon triangle">
+          <i class="material-icons icon triangle" (click)="showHomework(person, day)">
             change_history
           </i>
         </ng-container>
         <ng-container *ngIf="false">
-          <i class="material-icons icon close">
+          <i class="material-icons icon close" (click)="showHomework(person, day)">
             close
           </i>
         </ng-container>

@@ -3,4 +3,5 @@ export interface Student {
   name: string;
   classId: number;
   attendance: {};
+  homework: {};
 }
