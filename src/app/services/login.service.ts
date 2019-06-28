@@ -12,7 +12,7 @@ export class LoginService {
   apiUrl = environment.apiUrl;
   managers: Manager[];
 
-  constructor(public http: HttpClient) {}
+  constructor(public http: HttpClient) { }
 
   getManagers() {
     this.http
