@@ -5,10 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
-/* 3rd party modules */
-// https://github.com/auth0/angular2-jwt
-import { JwtHelper } from 'angular2-jwt';
-
 // Components
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
@@ -21,11 +17,7 @@ import { HomeworkSideComponent } from './homework-side/homework-side.component';
 import { HomeworkCalenderComponent } from './homework-calender/homework-calender.component';
 
 // Services
-import { AuthService } from './services/auth.service';
 import { LoginService } from './services/login.service';
-
-// Guards
-import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -46,7 +38,7 @@ import { AuthGuard } from './guards/auth.guard';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [AuthService, LoginService, AuthGuard, JwtHelper],
+  providers: [LoginService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
