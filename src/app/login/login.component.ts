@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../services/auth.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,13 +8,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
-  public message: string;
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private auth: AuthService,
-    private router: Router
-  ) {}
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -42,20 +35,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(value: any) {
-    console.log('[payload]', this.loginForm.value);
-    this.auth.signin(this.loginForm.value).subscribe(
-      () => this.router.navigate(['dashboard']),
-      ({ error }) => {
-        console.log(error.message);
-        this.message = error.message;
-      }
-    );
-  }
-  get id() {
-    return this.loginForm.get('id');
-  }
-
-  get pw() {
-    return this.loginForm.get('pw');
+    console.log('[payload]', value);
   }
 }
