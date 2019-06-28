@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Manager } from '../models/manager';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +11,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private loginService: LoginService
+  ) {}
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
@@ -35,6 +40,15 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(value: any) {
-    console.log('[payload]', value);
+    this.loginService.getManagers();
+    setTimeout(() => {
+      this.loginService.login(value.id, value.pw);
+      if (this.loginService.getIsLogin()) {
+        localStorage.setItem(
+          'login',
+          JSON.stringify(this.loginService.getIsLogin())
+        );
+      }
+    }, 1000);
   }
 }
