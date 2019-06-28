@@ -3,7 +3,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 78vw;
+  width: 70vw;
   height: 100vh;
   margin: 0vw;
   /* background: pink; */
@@ -12,8 +12,7 @@
 
 .material-icons {
   color: #b71c1c;
-  font-size: 2.4rem;
-
+  font-size: 2.2rem;
 }
 
 .person,
@@ -28,11 +27,10 @@
 .name,
 .person {
   padding: 10px;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
-.header-month,
-.calender-table-div {
+.header-month, .calender-table{
   margin: 50px auto;
   vertical-align: middle;
   display: flex;
@@ -49,23 +47,24 @@
 .calender-table {
   display: inline-block;
   padding: 20px 20px 10px 10px;
-
+  background-color: #f2f2f2;
+  border-radius: 40px 40px 0 0;
+  margin: 0 0.5vw;
 }
 
 .day {
   background-color: #b71c1c;
   border-radius: 20%;
   color: #ffffff;
-  width: 18px;
-  height: 18px;
+  width: 15px;
+  height: 15px;
   padding: 10px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-right: 5px;
+  cursor: grab;
 }
 
-.calender-table-div {
-  background-color: #f2f2f2;
-  border-radius: 40px 40px 0 0;
-  width: auto;
-  margin: 0 20px;
+.icon{
+  cursor: grab;
 }
+
