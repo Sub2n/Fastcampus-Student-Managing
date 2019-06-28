@@ -29,3 +29,63 @@
     transform: translateX(100%);
   }
 } */
+form {
+  text-align: center;
+  padding: 10px 5px 0px 5px;
+  border-radius: 5px;
+}
+
+#homework {
+  font-size: 1rem;
+  width: 70%;
+  min-width: 50%;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background: #fff;
+  color: #b71c1c;
+  border: none;
+  position: relative;
+  width: 70%;
+  height: 50px;
+  font-size: 1.6rem;
+  padding: 0 1.5rem;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+  margin-top: 30px;
+}
+
+button:hover {
+  background: #fff;
+  color: #b71c1c;
+}
+
+button:before,
+button:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: #b71c1c;
+  transition: 400ms ease all;
+}
+
+button:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+
+button:hover:before,
+button:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
+}

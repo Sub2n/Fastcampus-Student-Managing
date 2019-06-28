@@ -15,33 +15,30 @@ export class HomeworkCalenderComponent implements OnInit {
   presentMonth: number;
   presentYear: number;
   studentsData: Student[];
+  touchHomework: boolean;
 
-  constructor(private http: HttpClient) {
-
-  }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get<Student[]>('http://localhost:3000/students')
-      .subscribe(data => this.studentsData = data);
+    this.http
+      .get<Student[]>('http://localhost:3000/students')
+      .subscribe(data => (this.studentsData = data));
 
     this.presentMonth = new Date().getMonth();
     this.presentYear = new Date().getFullYear();
     this.makeDay();
 
     this.isShow = false;
-
+    this.touchHomework = false;
   }
 
-  showSide() {
-
-  }
+  showSide() { }
 
   increase() {
     if (this.presentMonth === 11) {
       this.presentYear++;
       this.presentMonth = 0;
-    }
-    else this.presentMonth++;
+    } else this.presentMonth++;
     this.makeDay();
   }
 
@@ -55,12 +52,11 @@ export class HomeworkCalenderComponent implements OnInit {
     this.makeDay();
   }
 
-
   makeDay() {
     this.days = [];
     for (let a = 1; a < 13; a++) {
-      const b = new Date(this.presentYear, a, 0)
-      this.maxDays = [...this.maxDays, b.getDate()]
+      const b = new Date(this.presentYear, a, 0);
+      this.maxDays = [...this.maxDays, b.getDate()];
     }
     for (let i = 1; i <= this.maxDays[this.presentMonth]; i++) {
       this.days = [...this.days, { year: this.presentYear, month: this.presentMonth + 1, day: i, all: `${this.presentYear}${this.presentMonth + 1}${i}` }];
@@ -70,6 +66,7 @@ export class HomeworkCalenderComponent implements OnInit {
 
   addHomework() {
     this.isShow = !this.isShow;
-    this.show.emit(this.isShow);
+    this.touchHomework = !this.touchHomework;
+    this.show.emit([this.isShow, this.touchHomework]);
   }
 }
