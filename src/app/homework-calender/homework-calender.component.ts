@@ -26,7 +26,6 @@ export class HomeworkCalenderComponent implements OnInit {
 
   }
 
-
   showSide() {
     this.isShow = !this.isShow;
     this.show.emit(this.isShow);
@@ -67,9 +66,9 @@ export class HomeworkCalenderComponent implements OnInit {
     { id: 11, name: "조항민" },
     { id: 12, name: "최코난" },
     { id: 13, name: "김퉁퉁" },
-    { id: 14, name: "김스폰지밥" },
+    { id: 14, name: "스폰지" },
     { id: 15, name: "한루피" },
-    { id: 16, name: "유깐깐찡어" },
+    { id: 16, name: "깐깐찡" },
     { id: 17, name: "김초파" },
     { id: 18, name: "박나미" },
     { id: 19, name: "서문탁" },

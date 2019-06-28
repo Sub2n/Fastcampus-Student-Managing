@@ -16,4 +16,10 @@ export class MainComponent implements OnInit {
       .getLoginStatus()
       .subscribe(status => (this.isLogin = status));
   }
+
+  ngDoCheck() {
+    this.loginService
+      .getLoginStatus()
+      .subscribe(status => (this.isLogin = status));
+  }
 }
